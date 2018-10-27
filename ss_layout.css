@@ -1,0 +1,116 @@
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 3
+   Case Problem 3
+   
+   Layout Style Sheet for A Soldier's Scrapbook
+   Author: Dajah Medina
+   Date:   10.26.18
+   
+   Filename: ss_layout.css
+
+*/
+
+
+/* Article Styles */
+/* I created an article tag to  float it left with a width of 384 px */
+article {
+    float: left;
+    width: 384px;
+}
+
+
+
+/* First Line and Drop Cap Styles */
+/* I created a paragraph tag for the paragraph to be in small caps and with a font size set to 1.25em and a font vibrant of small caps.
+I then created an article with a p tag nested into is with a first of type, and first line to change the first lette of the paragraph with a font size and a font family. I floated it all left with a height to the line of .8em and set the margin of the left and right to 5pxs each.*/
+p:first-of-type::first-line {
+    font-size: 1.25em;
+    font-variant: small-caps;
+}
+
+article p:first-of-type::first-letter {
+    font-size: 4em;
+    font-family: serif;
+    float: left;
+    line-height: .8em;
+    margin-right: 5px;
+    margin-right: 5px;
+}
+
+
+
+/* Aside Styles */
+/* I created an aside elemnt to set the width to 768pxs and floated it all left. */
+aside {
+    width: 768px;
+    float: left;
+}
+
+
+
+/* Map Styles */
+/* I made a div with an id of battle map to locate it and set the width of 688 px, the margin for both th e bottom and top to 20px so its evened out with the right and left set to auto and a positiion of relative.
+Next, I created a image tag with an id of map  image to set the display to block and widht to 100% */
+div#battleMap {
+    width: 688px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+}
+
+img#mapimage {
+    display: block;
+    width: 100%;
+}
+
+/* Interactive Map Styles */
+/* I made a div with an a nested into it with an id of marker 1-6 and set the top and the bottom */
+div a.battleMarkers {
+    position: absolute;
+}
+
+div a#marker1 {
+    top: 220px;
+    left: 340px;
+}
+
+div a#marker2 {
+    top: 194px;
+    left: 358px;
+}
+
+div a#marker3 {
+    top: 202px;
+    left: 400px;
+}
+
+div a#marker4 {
+    top: 217px;
+    left: 452px;
+}
+
+div a#marker5 {
+    top: 229px;
+    left: 498px;
+}
+
+div a#marker6 {
+    top: 246px;
+    left: 544px;
+}
+
+/* Map Information Styles */
+/* I made a div with a class of mappinfo with the display of none 
+After that, I mad an a tag with an class of battle markers and a peudo of hover for the div with a class of mapifo and sett the display to block. */
+div.mapInfo {
+    display: none;
+}
+
+a.battleMarkers:hover+div.mapInfo {
+    display: block;
+}
